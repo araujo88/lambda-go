@@ -2,16 +2,13 @@ package core
 
 import "golang.org/x/exp/constraints"
 
-// mapSlice applies a function to each element of a slice of type T and returns a new slice of the same type T.
-func Map[T any](slice []T, function func(T) T) []T {
-	newSlice := make([]T, len(slice))
-	if len(slice) == 0 {
-		return []T{}
-	}
-	for i, v := range slice {
-		newSlice[i] = function(v)
-	}
-	return newSlice
+// mapSlice applies a function to each element of a slice of type T and returns a new slice of type U.
+func Map[T any, U any](slice []T, function func(T) U) []U {
+    newSlice := make([]U, len(slice))
+    for i, v := range slice {
+        newSlice[i] = function(v)
+    }
+    return newSlice
 }
 
 // Foldr recursively folds a slice from the right using a function and an initial accumulator value.

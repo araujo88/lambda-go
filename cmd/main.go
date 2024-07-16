@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"strconv"
 
 	"github.com/araujo88/lambda-go/pkg/core"
 	"github.com/araujo88/lambda-go/pkg/predicate"
@@ -14,6 +15,7 @@ func main() {
 	// Example: Doubling the values in a slice of integers
 	intSlice := []int{1, 2, 3, 4, 5}
 	doubled := core.Map(intSlice, func(x int) int { return x * 2 })
+	stringNumbers := core.Map(intSlice, strconv.Itoa)
 	sum := core.Foldr(func(x int, acc int) int { return x + acc }, 0, intSlice)
 	greaterThan2 := predicate.Filter(intSlice, func(x int) bool {
 		if x > 2 {
@@ -26,6 +28,7 @@ func main() {
 	fmt.Println("Head:", utils.Head(intSlice))
 	fmt.Println("Tail:", utils.Tail(intSlice))
 	fmt.Println("Doubled Integers:", doubled)
+	fmt.Println(stringNumbers)
 	fmt.Println("Sum of integers:", sum)
 	fmt.Println("Filtering elements greater than 2:", greaterThan2)
 
