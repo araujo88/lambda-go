@@ -36,7 +36,7 @@ func TestGroupBy(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := groupBy(tt.slice, tt.keyFunc); !reflect.DeepEqual(got, tt.want) {
+			if got := GroupBy(tt.slice, tt.keyFunc); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("groupBy() = %v, want %v", got, tt.want)
 			}
 		})
@@ -56,7 +56,7 @@ func TestSortSlice(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			sortSlice(tt.slice) // Modify the slice in-place
+			SortSlice(tt.slice) // Modify the slice in-place
 			if !reflect.DeepEqual(tt.slice, tt.want) {
 				t.Errorf("sortSlice() resulted in %v, want %v", tt.slice, tt.want)
 			}
