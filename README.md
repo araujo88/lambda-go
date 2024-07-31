@@ -1,5 +1,8 @@
 # Lambda-Go
 
+[![license](https://img.shields.io/badge/license-MIT-green)](https://raw.githubusercontent.com/araujo88/lambda-go/main/LICENSE)
+[![build](https://github.com/araujo88/lambda-go//actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/araujo88/lambda-go/actions/workflows/go.yml)
+
 ## Overview
 
 Lambda-Go is a library designed to extend Go's capabilities with functional programming techniques inspired by Haskell. It aims to provide Go developers with tools to write cleaner, more expressive code while leveraging Go's strong typing and efficiency.
